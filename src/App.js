@@ -4,7 +4,7 @@ import "./App.css";
 
 import Cafe from "./Cafe/Details";
 
-const openingHours = ["CLOSED", "9-5", "9-5", "9-5", "9-5", "9-5", "CLOSED"];
+const openingHours = ["CLOSED", "7-2", "7-2", "7-2", "7-2", "7-2", "CLOSED"];
 
 function App() {
   const today = new Date();

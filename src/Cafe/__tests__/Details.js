@@ -1,32 +1,23 @@
 import React from "react";
-import { render, screen, fireEvent, wait } from "@testing-library/react";
-import Details from "../details";
+import Details from "../Details";
 
-const cafeName = "Kinfolk";
-const openingHours = ["CLOSED", "9-5", "9-5", "9-5", "9-5", "9-5", "CLOSED"];
+import { render } from "@testing-library/react";
 
-test("shows today's opening hours by default", async () => {
-  const { getByText } = render(
-    <Details dayOfTheWeek={1} name={cafeName} openingHours={openingHours} />
-  );
+const name = "Kinfolk";
 
-  expect(screen.getByText("Today (Monday): 9-5")).toBeInTheDocument();
+test("shows the cafe's name", () => {
+  const { getByText } = render(<Details name={name} openingHours={[]} />);
+
+  expect(getByText(name)).toBeInTheDocument();
 });
 
-test("can toggle between all hours and just today's", async () => {
-  const { getByText } = render(
-    <Details dayOfTheWeek={1} name={cafeName} openingHours={openingHours} />
+test("toggle hours", () => {
+  const openingHours = ["CLOSED", "7-2", "7-2", "7-2", "7-2", "7-2", "CLOSED"];
+
+  const { getByText, queryByText } = render(
+    <Details dayOfTheWeek={1} name={name} openingHours={openingHours} />
   );
 
-  expect(screen.getByText("Today (Monday): 9-5")).toBeInTheDocument();
-
-  expect(screen.queryByText("Tuesday: 9-5")).toBeNull();
-
-  fireEvent.click(getByText("Show All Hours"));
-
-  expect(screen.getByText("Tuesday: 9-5")).toBeInTheDocument();
-
-  fireEvent.click(getByText("Show Today's Hours"));
-
-  expect(screen.queryByText("Tuesday: 9-5")).toBeNull();
+  expect(getByText("Today (Monday): 7-2")).toBeInTheDocument();
+  expect(queryByText("Tuesday: 7-2")).toBeNull();
 });
