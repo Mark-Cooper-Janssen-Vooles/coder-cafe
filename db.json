@@ -1,0 +1,9 @@
+{
+  "cafes": [
+    {
+      "id": "kinfolk",
+      "name": "Kinfolk",
+      "openingHours": ["CLOSED", "9-5", "9-5", "9-5", "9-5", "9-5", "CLOSED"]
+    }
+  ]
+}
