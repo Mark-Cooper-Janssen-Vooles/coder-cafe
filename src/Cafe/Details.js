@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import OpeningHours from "./OpeningHours";
+import picture from "../kinfolk.jpg";
 
 class Details extends React.Component {
   render() {
@@ -13,6 +14,8 @@ class Details extends React.Component {
           dayOfTheWeek={this.props.dayOfTheWeek}
           hours={openingHours}
         />
+
+        <img src={picture} />
       </div>
     );
   }

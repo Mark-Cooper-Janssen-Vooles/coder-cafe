@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./App.css";
+
 import Cafe from "./Cafe/Details";
 
 const openingHours = ["CLOSED", "9-5", "9-5", "9-5", "9-5", "9-5", "CLOSED"];
