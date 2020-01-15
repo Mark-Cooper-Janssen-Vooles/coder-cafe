@@ -11,11 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <Cafe
-        name="Kinfolk"
-        dayOfTheWeek={today.getDay()}
-        openingHours={openingHours}
-      />
+      <Cafe id={"kinfolk"} dayOfTheWeek={today.getDay()} />
     </div>
   );
 }
