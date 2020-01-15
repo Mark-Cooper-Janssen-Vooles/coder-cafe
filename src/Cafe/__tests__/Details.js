@@ -1,5 +1,3 @@
-import "@testing-library/jest-dom/extend-expect";
-
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 
